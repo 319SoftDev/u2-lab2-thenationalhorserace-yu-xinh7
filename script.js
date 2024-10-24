@@ -14,30 +14,44 @@ const blueHorse = document.querySelector("#blue-horse");
 const pinkButton = document.querySelector("#pink-button");
 const pinkHorse = document.querySelector("#pink-horse");
 
-const brownButton = document.querySelector("#pink-button");
-const brownHorse = document.querySelector("#pink-horse");
+const brownButton = document.querySelector("#brown-button");
+const brownHorse = document.querySelector("#brown-horse");
+
+const winner = document.querySelector("#winner");
 
 // OnClick Functions Here
 const advanceBlue = (e) => {
   blue_position += 1;
   changePosition(blueHorse, blue_position);
+  checkWinner();
 };
 
 const advancePink = (e) => {
   pink_position += 1;
   changePosition(pinkHorse, pink_position);
+  checkWinner();
 };
 
 const advanceBrown = (e) => {
-  pink_position += 1;
+  brown_position += 1;
   changePosition(brownHorse, brown_position);
+  checkWinner();
 };
 
 // Check for a winner
 const checkWinner = (position, color) => {
-
+  if (blue_position == 5) {
+    winner.innerHTML = "Blue is the winner!";
+  };
+  if (pink_position == 5) {
+    winner.innerHTML="Pink is the winner!";
+  };
+  if (brown_position == 5) {
+   winner.innerHTML="Brown is the winner!";
+  };
 };
 
+console.log(checkWinner);
 
 
 // Event Listeners Here
